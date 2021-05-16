@@ -48,13 +48,13 @@ class Game {
    * Console log the winner of the battle
    */
   declareWinner(){
-    while(this.player1[health] > 0|| this.player2[health] > 0){
-      if (this.player1[health] === 0 && this.player2[health] > 0){
+    while(this.player1.health > 0|| this.player2.health > 0){
+      if (this.player1.health === 0 && this.player2.health > 0){
         this.theEnd = true
-        console.log(this.declareWinner())
-      }else if(this.player2[health] === 0 && this.player1[health] > 0){
+        console.log(this.player2.declareWinner())
+      }else if(this.player2.health === 0 && this.player1.health > 0){
         this.theEnd = true
-        console.log(this.declareWinner())
+        console.log(this.player1.declareWinner())
       }
     }
   }
