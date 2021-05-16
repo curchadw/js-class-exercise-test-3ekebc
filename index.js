@@ -84,7 +84,9 @@ class Game {
    * Reset theEnd to false
    */
   reset(){ 
-    
+    this.theEnd = false
+    this.player1.health = 100
+    this.player2.helath = 100
   }
 
   /**
@@ -92,6 +94,8 @@ class Game {
    * Use that number to decrease health from player 2
    */
   pl1AttackPl2(){ 
+    let decrease = Math.floor(Math.random()*10) + 1
+    return this.player2.health - decrease
   }
 
   /**
@@ -99,6 +103,8 @@ class Game {
    * Use that number to decrease health from player 1
    */
   pl2AttackPl1(){ 
+    let decrease = Math.floor(Math.random()*10) + 1
+    return this.player1.health - decrease
   }
 
   /**
@@ -106,6 +112,8 @@ class Game {
    * Use that number to increase health of player 1
    */
   pl1Heal(){
+    let increase = Math.floor(Math.random()*10) + 1
+    return this.player1.health + increase
   }
 
   /**
@@ -113,9 +121,15 @@ class Game {
    * Use that number to increase health of player 2
    */
   pl2Heal(){ 
+    let increase = Math.floor(Math.random()*10) + 1
+    return this.player2.health + increase
   }
 
 }
 
 // Initialize the class here
 // Call the start function of the game
+
+let game1 = new Game()
+game1.start()
+console.log(game1)
